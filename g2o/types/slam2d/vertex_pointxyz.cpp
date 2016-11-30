@@ -36,7 +36,7 @@
 
 namespace g2o {
 
-  bool VertexPointXYZ::read(std::istream& is) {
+  bool VertexPtXYZ::read(std::istream& is) {
     Vector3D lv;
     for (int i=0; i<3; i++)
       is >> lv[i];
@@ -44,7 +44,7 @@ namespace g2o {
     return true;
   }
 
-  bool VertexPointXYZ::write(std::ostream& os) const {
+  bool VertexPtXYZ::write(std::ostream& os) const {
     Vector3D lv=estimate();
     for (int i=0; i<3; i++){
       os << lv[i] << " ";
@@ -54,10 +54,10 @@ namespace g2o {
 
 
 #ifdef G2O_HAVE_OPENGL
-  VertexPointXYZDrawAction::VertexPointXYZDrawAction(): DrawAction(typeid(VertexPointXYZ).name()){
+  VertexPtXYZDrawAction::VertexPtXYZDrawAction(): DrawAction(typeid(VertexPtXYZ).name()){
   }
 
-  bool VertexPointXYZDrawAction::refreshPropertyPtrs(HyperGraphElementAction::Parameters* params_){
+  bool VertexPtXYZDrawAction::refreshPropertyPtrs(HyperGraphElementAction::Parameters* params_){
     if (! DrawAction::refreshPropertyPtrs(params_))
       return false;
     if (_previousParams){
@@ -69,7 +69,7 @@ namespace g2o {
   }
 
 
-  HyperGraphElementAction* VertexPointXYZDrawAction::operator()(HyperGraph::HyperGraphElement* element, 
+  HyperGraphElementAction* VertexPtXYZDrawAction::operator()(HyperGraph::HyperGraphElement* element, 
                      HyperGraphElementAction::Parameters* params ){
 
     if (typeid(*element).name()!=_typeName)
@@ -81,7 +81,7 @@ namespace g2o {
     
     if (_show && !_show->value())
       return this;
-    VertexPointXYZ* that = static_cast<VertexPointXYZ*>(element);
+    VertexPtXYZ* that = static_cast<VertexPtXYZ*>(element);
     
 
     glPushMatrix();
@@ -99,12 +99,12 @@ namespace g2o {
   }
 #endif
 
-  VertexPointXYZWriteGnuplotAction::VertexPointXYZWriteGnuplotAction() :
-    WriteGnuplotAction(typeid(VertexPointXYZ).name())
+  VertexPtXYZWriteGnuplotAction::VertexPtXYZWriteGnuplotAction() :
+    WriteGnuplotAction(typeid(VertexPtXYZ).name())
   {
   }
 
-  HyperGraphElementAction* VertexPointXYZWriteGnuplotAction::operator()(HyperGraph::HyperGraphElement* element, HyperGraphElementAction::Parameters* params_ )
+  HyperGraphElementAction* VertexPtXYZWriteGnuplotAction::operator()(HyperGraph::HyperGraphElement* element, HyperGraphElementAction::Parameters* params_ )
   {
     if (typeid(*element).name()!=_typeName)
       return 0;
@@ -114,7 +114,7 @@ namespace g2o {
       return 0;
     }
 
-    VertexPointXYZ* v = static_cast<VertexPointXYZ*>(element);
+    VertexPtXYZ* v = static_cast<VertexPtXYZ*>(element);
     *(params->os) << v->estimate().x() << " " << v->estimate().y() << " " << v->estimate().z() << " " << std::endl;
     return this;
   }

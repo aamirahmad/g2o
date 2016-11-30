@@ -24,8 +24,8 @@
 // NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#ifndef G2O_VERTEX_TRACKXYZ_H_
-#define G2O_VERTEX_TRACKXYZ_H_
+#ifndef G2O_VERTEX_PTXYZ_H_
+#define G2O_VERTEX_PTXYZ_H_
 
 #include "g2o_types_slam2d_api.h"
 #include "g2o/core/base_vertex.h"
@@ -35,11 +35,11 @@ namespace g2o {
   /**
    * \brief Vertex for a tracked point in space
    */
-  class G2O_TYPES_SLAM2D_API VertexPointXYZ : public BaseVertex<3, Vector3D>
+  class G2O_TYPES_SLAM2D_API VertexPtXYZ : public BaseVertex<3, Vector3D>
   {
     public:
       EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
-      VertexPointXYZ() {}
+      VertexPtXYZ() {}
       virtual bool read(std::istream& is);
       virtual bool write(std::ostream& os) const;
 
@@ -83,10 +83,10 @@ namespace g2o {
 
   };
 
-  class G2O_TYPES_SLAM2D_API VertexPointXYZWriteGnuplotAction: public WriteGnuplotAction
+  class G2O_TYPES_SLAM2D_API VertexPtXYZWriteGnuplotAction: public WriteGnuplotAction
   {
     public:
-      VertexPointXYZWriteGnuplotAction();
+      VertexPtXYZWriteGnuplotAction();
       virtual HyperGraphElementAction* operator()(HyperGraph::HyperGraphElement* element, HyperGraphElementAction::Parameters* params_ );
   };
 
@@ -94,9 +94,9 @@ namespace g2o {
   /**
    * \brief visualize a 3D point
    */
-  class VertexPointXYZDrawAction: public DrawAction{
+  class VertexPtXYZDrawAction: public DrawAction{
     public:
-      VertexPointXYZDrawAction();
+      VertexPtXYZDrawAction();
       virtual HyperGraphElementAction* operator()(HyperGraph::HyperGraphElement* element, 
           HyperGraphElementAction::Parameters* params_);
 

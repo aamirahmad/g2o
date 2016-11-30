@@ -31,7 +31,7 @@
 #include "vertex_se2.h"
 #include "vertex_point_xy.h"
 #include "vertex_pointxyz.h"
-#include "vertex_target_xyz.h"
+#include "vertex_targetxyz.h"
 #include "vertex_xy_vxvy.h"
 #include "parameter_se2_offset.h"
 #include "edge_se2_prior.h"
@@ -47,6 +47,6 @@
 #include "edge_se2_lotsofxy.h"
 #include "edge_xy_vxvy.h"
 #include "edge_se2_xy_vxvy.h"
-#include "edge_target_xyz.h"
-
+#include "edge_targetxyz.h"
+#include "edge_pointxyz_targetxyz.h"
 #endif
