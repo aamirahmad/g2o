@@ -107,7 +107,7 @@ namespace g2o {
       vj->setEstimate(temp);
     }
   }
-/*
+
 #ifndef NUMERIC_JACOBIAN_TWO_D_TYPES
   void EdgeTargetXYZ::linearizeOplus()
   {
@@ -142,7 +142,7 @@ namespace g2o {
 	_jacobianOplusXj(8, 0) =  0;  _jacobianOplusXj(8, 1) = 0;   _jacobianOplusXj(8, 2) = 0; 	_jacobianOplusXj(8, 3) = 0;  		_jacobianOplusXj(8, 4) = 0;		_jacobianOplusXj(8, 5) = 0;		_jacobianOplusXj(8, 6) = 0;			_jacobianOplusXj(8, 7) = 0;			_jacobianOplusXj(8, 8) = 1;	
   
   }
-#endif*/
+#endif
 
   EdgeTargetXYZWriteGnuplotAction::EdgeTargetXYZWriteGnuplotAction(): WriteGnuplotAction(typeid(EdgeTargetXYZ).name()){}
 

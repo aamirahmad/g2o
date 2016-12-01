@@ -118,9 +118,9 @@ namespace g2o {
 
       virtual void initialEstimate(const OptimizableGraph::VertexSet& from, OptimizableGraph::Vertex* to);
       virtual double initialEstimatePossible(const OptimizableGraph::VertexSet& from, OptimizableGraph::Vertex* to) { (void) to; return (from.count(_vertices[0]) == 1 ? 1.0 : -1.0);}
-// #ifndef NUMERIC_JACOBIAN_TWO_D_TYPES
-//       virtual void linearizeOplus();
-// #endif
+#ifndef NUMERIC_JACOBIAN_TWO_D_TYPES
+      virtual void linearizeOplus();
+#endif
   };
 
   class G2O_TYPES_SLAM2D_API EdgeTargetXYZWriteGnuplotAction: public WriteGnuplotAction {

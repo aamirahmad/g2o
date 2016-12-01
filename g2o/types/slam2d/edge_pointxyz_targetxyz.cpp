@@ -83,32 +83,32 @@ namespace g2o {
     }
   }
 
-// #ifndef NUMERIC_JACOBIAN_TWO_D_TYPES
-//   void EdgePtXYZ_TargetXYZ::linearizeOplus()
-//   {
-// 
-//     _jacobianOplusXi( 0 , 0 ) = -1;
-//     _jacobianOplusXi( 0 , 1 ) = 0;
-//     _jacobianOplusXi( 0 , 2 ) = 0;
-//     _jacobianOplusXi( 1 , 0 ) = 0;
-//     _jacobianOplusXi( 1 , 1 ) = -1;
-//     _jacobianOplusXi( 1 , 2 ) = 0;
-//     _jacobianOplusXi( 2 , 0 ) = 0;
-//     _jacobianOplusXi( 2 , 1 ) = 0;
-//     _jacobianOplusXi( 2 , 2 ) = -1;    
-// 
-//     _jacobianOplusXj( 0 , 0 ) = 1;
-//     _jacobianOplusXj( 0 , 1 ) = 0;
-//     _jacobianOplusXj( 0 , 2 ) = 0;
-//     _jacobianOplusXj( 1 , 0 ) = 0;
-//     _jacobianOplusXj( 1 , 1 ) = 1;
-//     _jacobianOplusXj( 1 , 2 ) = 0;
-//     _jacobianOplusXj( 2 , 0 ) = 0;
-//     _jacobianOplusXj( 2 , 1 ) = 0;
-//     _jacobianOplusXj( 2 , 2 ) = 1;       
-// 
-//   }
-// #endif
+#ifndef NUMERIC_JACOBIAN_TWO_D_TYPES
+  void EdgePtXYZ_TargetXYZ::linearizeOplus()
+  {
+
+    _jacobianOplusXi( 0 , 0 ) = -1;
+    _jacobianOplusXi( 0 , 1 ) = 0;
+    _jacobianOplusXi( 0 , 2 ) = 0;
+    _jacobianOplusXi( 1 , 0 ) = 0;
+    _jacobianOplusXi( 1 , 1 ) = -1;
+    _jacobianOplusXi( 1 , 2 ) = 0;
+    _jacobianOplusXi( 2 , 0 ) = 0;
+    _jacobianOplusXi( 2 , 1 ) = 0;
+    _jacobianOplusXi( 2 , 2 ) = -1;    
+
+    _jacobianOplusXj( 0 , 0 ) = 1;
+    _jacobianOplusXj( 0 , 1 ) = 0;
+    _jacobianOplusXj( 0 , 2 ) = 0;
+    _jacobianOplusXj( 1 , 0 ) = 0;
+    _jacobianOplusXj( 1 , 1 ) = 1;
+    _jacobianOplusXj( 1 , 2 ) = 0;
+    _jacobianOplusXj( 2 , 0 ) = 0;
+    _jacobianOplusXj( 2 , 1 ) = 0;
+    _jacobianOplusXj( 2 , 2 ) = 1;       
+
+  }
+#endif
 
   EdgePtXYZ_TargetXYZWriteGnuplotAction::EdgePtXYZ_TargetXYZWriteGnuplotAction(): WriteGnuplotAction(typeid(EdgePtXYZ_TargetXYZ).name()){}
 
